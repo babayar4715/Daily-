@@ -15,34 +15,25 @@ class HomeView extends StatelessWidget {
             'Daily',
             style: AppTextStyle.TextFz30,
           ),
-          actions: [
+          actions: const [
             Padding(
-              padding: const EdgeInsets.only(right: 8.0),
+              padding: EdgeInsets.only(right: 8.0),
               child: Icon(Icons.menu),
             ),
           ],
         ),
         body: Column(
-          children: [
+          children: const [
             TabBar(
               tabs: [
                 Tab(
-                  icon: Icon(
-                    Icons.home,
-                    color: AppColors.TabBarC,
-                  ),
+                  text: "Schedule",
                 ),
                 Tab(
-                  icon: Icon(
-                    Icons.note_alt,
-                    color: AppColors.TabBarC,
-                  ),
+                  text: "Note",
                 ),
                 Tab(
-                  icon: Icon(
-                    Icons.star,
-                    color: AppColors.TabBarC,
-                  ),
+                  text: "Habits",
                 ),
               ],
             ),
