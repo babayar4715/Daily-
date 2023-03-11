@@ -12,7 +12,7 @@ class HomeView extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text(
-            'Daily',
+            AppTexts.Dl,
             style: AppTextStyle.TextFz30,
           ),
           actions: const [
@@ -27,13 +27,22 @@ class HomeView extends StatelessWidget {
             TabBar(
               tabs: [
                 Tab(
-                  text: "Schedule",
+                  child: Text(
+                    AppTexts.SCh,
+                    style: AppTextStyle.FST,
+                  ),
                 ),
                 Tab(
-                  text: "Note",
+                  child: Text(
+                    AppTexts.Nt,
+                    style: AppTextStyle.FST,
+                  ),
                 ),
                 Tab(
-                  text: "Habits",
+                  child: Text(
+                    AppTexts.Habit,
+                    style: AppTextStyle.FST,
+                  ),
                 ),
               ],
             ),

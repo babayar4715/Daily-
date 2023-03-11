@@ -7,4 +7,7 @@ class AppTextStyle {
     fontWeight: FontWeight.bold,
     color: Colors.black87,
   );
+  // Tab names
+  static const FST =
+      TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 22);
 }

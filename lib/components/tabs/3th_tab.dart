@@ -36,7 +36,7 @@ class _ThirdTabState extends State<ThirdTab> {
   // checkbox
   void checkBoxChanged(bool? value, int index) {
     setState(() {
-      db.toDoList[index][1] = !db.toDoList[index][1];
+      db.HabitList[index][1] = !db.HabitList[index][1];
     });
     db.updateDataBase();
   }
@@ -47,14 +47,14 @@ class _ThirdTabState extends State<ThirdTab> {
     // delete task
     void deleteTask(int index) {
       setState(() {
-        db.toDoList.removeAt(index);
+        db.HabitList.removeAt(index);
       });
       db.updateDataBase();
     }
 
     void saveNewTask() {
       setState(() {
-        db.toDoList.add([_controller.text, false]);
+        db.HabitList.add([_controller.text, false]);
         _controller.clear();
       });
       Navigator.of(context).pop();
@@ -76,19 +76,18 @@ class _ThirdTabState extends State<ThirdTab> {
 
     return Scaffold(
       backgroundColor: AppColor.bgcolor,
-      appBar: AppBar(
-        title: const Text("Habits"),
-      ),
       floatingActionButton: FloatingActionButton(
         onPressed: creatNewTask,
-        child: const Icon(Icons.add),
+        child: const Text(
+          AppTexts.Ad,
+        ),
       ),
       body: ListView.builder(
-        itemCount: db.toDoList.length,
+        itemCount: db.HabitList.length,
         itemBuilder: (context, index) {
           return TodoTile(
-            taskame: db.toDoList[index][0],
-            taskComplated: db.toDoList[index][1],
+            taskame: db.HabitList[index][0],
+            taskComplated: db.HabitList[index][1],
             onChanged: (value) => checkBoxChanged(value, index),
             deleteFunction: (context) => deleteTask(index),
           );
