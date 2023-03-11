@@ -4,12 +4,12 @@ import '../constants/app_text.dart';
 
 class ToDoServer {
   // server all to to..
-  List toDoList = [];
+  List HabitList = [];
   final _myBox = Hive.box(AppTexts.Mybox);
 
   //
   void createInitialData() {
-    toDoList = [
+    HabitList = [
       [AppTexts.ToDo1, false],
       [AppTexts.ToDo2, false],
     ];
@@ -17,11 +17,11 @@ class ToDoServer {
 
   // load the data from server
   void loaddata() {
-    toDoList = _myBox.get(AppTexts.Listtodo);
+    HabitList = _myBox.get(AppTexts.Listtodo);
   }
 
   //  update the server
   void updateDataBase() {
-    _myBox.put(AppTexts.Listtodo, toDoList);
+    _myBox.put(AppTexts.Listtodo, HabitList);
   }
 }
