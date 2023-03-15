@@ -10,4 +10,10 @@ class AppColor {
   static const Color bggCAl = Color.fromARGB(255, 129, 199, 132);
   // to do tile
   static const Color TODO = Color.fromARGB(255, 232, 17, 17);
+
+  static const Color blue = Colors.blue;
+  static const Color red = Colors.red;
+  static const Color white = Colors.white;
+  static const Color black = Colors.black;
+  static const Color idontknow = Color.fromARGB(255, 71, 123, 201);
 }

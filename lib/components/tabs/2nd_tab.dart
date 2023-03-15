@@ -5,10 +5,10 @@ class SecondTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.green,
-      child: Center(
-        child: Text('SecondTab'),
+    return Scaffold(
+      backgroundColor: Colors.grey[200],
+      body: Row(
+        children: [Text("there are we have to put callendar and list")],
       ),
     );
   }
