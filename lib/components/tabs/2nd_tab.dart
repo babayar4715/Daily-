@@ -8,7 +8,11 @@ class SecondTab extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       body: Row(
-        children: [Text("there are we have to put callendar and list")],
+        children: const [
+          Text(
+            "there are we have to put callendar and list",
+          )
+        ],
       ),
     );
   }
