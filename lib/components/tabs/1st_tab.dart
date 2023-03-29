@@ -8,7 +8,8 @@ class FirstTab extends StatelessWidget {
     return Container(
       color: Colors.green,
       child: Center(
-        child: Text('1s tab'),
+        child: Text(
+            'There are we would be write just a to do list that we can there write our list of tasks then delete it'),
       ),
     );
   }
