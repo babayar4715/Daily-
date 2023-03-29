@@ -114,7 +114,7 @@ class DialogBax extends StatelessWidget {
   Widget build(BuildContext context) {
     return AlertDialog(
       backgroundColor: AppColor.bggCAl,
-      content: Container(
+      content: SizedBox(
         height: 200,
         width: double.infinity,
         child: Column(
@@ -192,7 +192,7 @@ class TodoTile extends StatelessWidget {
       padding: const EdgeInsets.only(left: 25.0, top: 25.0, right: 25.0),
       child: Slidable(
         endActionPane: ActionPane(
-          motion: StretchMotion(),
+          motion: const StretchMotion(),
           children: [
             SlidableAction(
               onPressed: deleteFunction,
@@ -205,7 +205,7 @@ class TodoTile extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.all(24),
           decoration: BoxDecoration(
-            color: Color.fromARGB(255, 71, 123, 201),
+            color: AppColor.idontknow,
             borderRadius: BorderRadius.circular(12),
           ),
           child: Row(
