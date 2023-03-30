@@ -6,7 +6,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 
 import '../../constants/app_colors.dart';
 import '../../constants/app_text.dart';
-import '../../model/3th-tab_model.dart';
+import '../../data/3th-tab_model.dart';
 import '../../server/server_3th.dart';
 import '../buttons/3th_tab_button.dart';
 import '../dialog/3th_tab_dialog.dart';
