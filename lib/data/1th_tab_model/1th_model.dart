@@ -1,18 +1,17 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 class Toptom {
   Toptom({
     required this.task,
-    required this.dateTime,
+    this.dateTime,
   });
   final String task;
-  final DateTime dateTime;
+  final DateTime? dateTime;
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'task': task,
-      'dateTime': dateTime.millisecondsSinceEpoch,
+      'dateTime': dateTime?.millisecondsSinceEpoch,
     };
   }
 

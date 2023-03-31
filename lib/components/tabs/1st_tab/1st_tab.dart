@@ -7,7 +7,7 @@ class FirstTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueAccent,
+      backgroundColor: Colors.greenAccent,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(
