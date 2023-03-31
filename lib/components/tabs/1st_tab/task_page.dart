@@ -1,5 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:my_app_dn/data/1th_tab_model/1th_model.dart';
+import 'package:my_app_dn/server/date_time_service.dart';
+import 'package:my_app_dn/server/store_sevice.dart';
 
 import '../../text_field/text_field.dart';
 
@@ -7,11 +11,12 @@ class TaskPage extends StatelessWidget {
   TaskPage({Key? key}) : super(key: key);
 
   final task = TextEditingController();
-  final datetime = TextEditingController();
+  final dateTime = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
         title: const Text(
           'New Task',
@@ -35,14 +40,37 @@ class TaskPage extends StatelessWidget {
             controller: task,
             hintText: 'Here type new task ...',
           ),
-          const SizedBox(
-            height: 30,
+          const Padding(
+            padding: EdgeInsets.only(top: 20.0, bottom: 20),
+            child: Text(
+              "What time do you do ...",
+              style: TextStyle(fontSize: 22),
+            ),
           ),
           TtextField(
-            controller: datetime,
+            controller: dateTime,
             hintText: 'Time ',
+            focusNode: FocusNode(),
+            onTap: () async {
+              await DateTimeService.showDateTimePicker(
+                context,
+                (value) =>
+                    dateTime.text = DateFormat(" d MMM , y").format(value),
+              );
+            },
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          final toptom = Toptom(
+            task: task.text,
+          );
+          await StoreService().saveProduct(toptom);
+          // ignore: use_build_context_synchronously
+          Navigator.popUntil(context, (route) => route.isFirst);
+        },
+        child: const Text('Add'),
       ),
     );
   }
