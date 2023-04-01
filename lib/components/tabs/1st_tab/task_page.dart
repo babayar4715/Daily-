@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:my_app_dn/constants/text_styles.dart';
 import 'package:my_app_dn/data/1th_tab_model/1th_model.dart';
 import 'package:my_app_dn/server/date_time_service.dart';
 import 'package:my_app_dn/server/store_sevice.dart';
 
+import '../../../constants/app_text.dart';
 import '../../text_field/text_field.dart';
 
 class TaskPage extends StatelessWidget {
@@ -19,7 +21,7 @@ class TaskPage extends StatelessWidget {
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
         title: const Text(
-          'New Task',
+          AppTexts.NPl,
           style: TextStyle(
             fontSize: 22,
             fontWeight: FontWeight.bold,
@@ -31,25 +33,22 @@ class TaskPage extends StatelessWidget {
         children: [
           const Padding(
             padding: EdgeInsets.only(top: 20, bottom: 20),
-            child: Text(
-              'What task you have planned for ...',
-              style: TextStyle(fontSize: 22),
-            ),
+            child: Text(AppTexts.Pl, style: AppTextStyle.FT22),
           ),
           TtextField(
             controller: task,
-            hintText: 'Here type new task ...',
+            hintText: AppTexts.Tk,
           ),
           const Padding(
             padding: EdgeInsets.only(top: 20.0, bottom: 20),
             child: Text(
-              "What time do you do ...",
-              style: TextStyle(fontSize: 22),
+              AppTexts.Tme,
+              style: AppTextStyle.FT22,
             ),
           ),
           TtextField(
             controller: dateTime,
-            hintText: 'Time ',
+            hintText: AppTexts.Tm,
             focusNode: FocusNode(),
             onTap: () async {
               await DateTimeService.showDateTimePicker(

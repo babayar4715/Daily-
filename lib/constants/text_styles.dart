@@ -10,4 +10,6 @@ class AppTextStyle {
   // Tab names
   static const FST =
       TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 22);
+
+  static const FT22 = TextStyle(fontSize: 22);
 }

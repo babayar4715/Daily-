@@ -15,4 +15,10 @@ class AppTexts {
   static const String SCh = "Schedule";
   static const String Nt = "Notes";
   static const String Hb = "Habits";
+  // 1st tab word
+  static const String Tm = "Time";
+  static const String Tme = "What time do you do ...";
+  static const String Tk = "Here type new task ...";
+  static const String Pl = "What task you have planned for ...";
+  static const String NPl = "New Task";
 }
